@@ -1,7 +1,8 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 const initialState ={
-    currentPage : "home",
-    currentPageIndex : 3
+    pages : ["","homepage","pages","colors","fonts"],
+    currentPage : ["siteinfo","homepage","pages","colors","fonts"],
+    currentPageIndex : 0
 }
 const pageSlice = createSlice({
     name:"pageSlice",
@@ -11,13 +12,23 @@ const pageSlice = createSlice({
             state.currentPage = action.payload
         },
         clearCurrentPage:(state,action)=>{
-            state.currentPage = "home"
+            state.currentPage = []
         },
         setCurrentPageIndex:(state,action)=>{
             state.currentPageIndex = action.payload
-        }
+        },
+        nextPage: (state) => {
+            if (state.currentPageIndex < 4) {
+                state.currentPageIndex += 1;
+            }
+        },
+        prevPage: (state) => {
+            if (state.currentPageIndex > 0) {
+                state.currentPageIndex -= 1;
+            }
+        },
     }
 })
 
-export const {setCurrentPage,clearCurrentPage} = pageSlice.actions
+export const {setCurrentPage,clearCurrentPage , nextPage,prevPage} = pageSlice.actions
 export default pageSlice.reducer

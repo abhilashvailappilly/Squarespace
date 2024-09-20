@@ -23,7 +23,6 @@ const RightSideContainer = () => {
 
   return (
     <div className='w-full flex justify-center items-center'>
-        <h1>{title}</h1>
        <div className='w-3/4'>
        <div className='mt-24  w-full flex justify-evenly font-bold'>
              <h3 className='text-3xl '>Choose a site title and  brand personality</h3>

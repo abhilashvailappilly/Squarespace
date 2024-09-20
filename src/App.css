@@ -78,11 +78,11 @@
 
 
 .animate-slow-left {
-  animation: slow-left 40s linear infinite;
+  animation: slow-left 60s linear infinite;
 }
 
 .animate-slow-right {
-  animation: slow-right 40s linear infinite;
+  animation: slow-right 60s linear infinite;
 }
 
 
