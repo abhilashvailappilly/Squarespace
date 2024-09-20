@@ -1,0 +1,92 @@
+#root {
+  /* max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center; */
+}
+
+.logo {
+  /* height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms; */
+}
+.logo:hover {
+  /* filter: drop-shadow(0 0 2em #646cffaa); */
+}
+.logo.react:hover {
+  /* filter: drop-shadow(0 0 2em #61dafbaa); */
+}
+
+
+
+.card {
+  /* padding: 2em; */
+}
+
+.read-the-docs {
+  /* color: #888; */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  /* scrollbar-width: none;  Firefox */
+}
+
+
+@keyframes slow-left {
+  0% {
+    transform: translateX(100%); /* Starts fully off the right side */
+  }
+  25% {
+    transform: translateX(50%); /* Moves fully off the left side */
+  }
+  50% {
+    transform: translateX(0%); /* Starts fully off the right side */
+  }
+  75% {
+    transform: translateX(-50%); /* Starts fully off the right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Moves fully off the left side */
+  }
+}
+
+
+@keyframes slow-right {
+  0% {
+    transform: translateX(-100%); /* Starts fully off the left side */
+  }
+  25% {
+    transform: translateX(-50%); /* Starts fully off the right side */
+  }
+  50% {
+    transform: translateX(0%); /* Moves to the center */
+  }
+  75% {
+    transform: translateX(50%); /* Moves right */
+  }
+  100% {
+    transform: translateX(100%); /* Moves fully off the right side */
+  }
+}
+
+
+.animate-slow-left {
+  animation: slow-left 40s linear infinite;
+}
+
+.animate-slow-right {
+  animation: slow-right 40s linear infinite;
+}
+
+
+.floatingTextTitle {
+  color:#DBDBE2;
+  /* color:"#DBDBE2" */
+}
