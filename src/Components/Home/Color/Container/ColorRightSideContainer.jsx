@@ -8,7 +8,7 @@ const ColorRightSideContainer = () => {
   const [color, setColor ] = useState({})
   useEffect(()=>{
     setColor(home?.color)
-  })
+  },[home?.color])
 
   const handleClickSelectColor = (sessionKey , paletteKey)=>{
  
