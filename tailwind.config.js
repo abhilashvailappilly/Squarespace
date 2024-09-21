@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['Clarkson', 'sans-serif'],  // Set Clarkson as default sans-serif
+      },
+      boxShadow: {
+        'custom': '0 4px 6px rgba(0, 0, 0, 0.1)',
       }
     },
   },

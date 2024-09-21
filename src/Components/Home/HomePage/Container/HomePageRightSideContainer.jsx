@@ -23,7 +23,7 @@ const HomePageRightSideContainer = () => {
       {Object.keys(home?.sections || {}).map((key) => {
             const section = home.sections[key];
             return (
-              <div key={key} className='w-full h-12 flex justify-start gap-3 items-center border-2 border-grey-400'>
+              <div key={key} className='w-full h-16 flex justify-start gap-3 items-center border-b-2 border-grey-400'>
               <input
                 type="checkbox"
                 name="section"
