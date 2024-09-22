@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useStoreHook } from '../../../Hooks/UseStoreHook';
 import { setTitle } from '../../../Store/Slices/HomeSlice';
+import { setWebsiteTitleFont } from '../../../Store/Slices/MenuSlice';
 
 const RightSideContainer = () => {
     
     const [title,_] = useState("")
     const [titleFont,setTitleFont] = useState("Professional")
 
-    const fontOptions = ["Professional", "Playful", "Sophisticated", "Friendly", "Bold", "Quirky", "Innovative"];
+    const fontOptions = [{name:"Professional",font:""},{name:"Playful",font:"Bitter"},{name:"Sophisticated",font:"Newsreader"},{name:"Friendly",font:"Bitter"},{name:"Bold",font:"Shrikhand"},{name:"Quirky",font:"Bitter"} ,{name:"Inovattive",font:"Newsreader"}];
 
-    const {home,dispatch} = useStoreHook()
+    const {home,menu,dispatch} = useStoreHook()
 
     useEffect(()=> {
         console.log(home)
-        setTitle(home.title?.text)
-    },[])
+        setTitle(menu.website.title?.title)
+    },[menu.website.title?.title])
     const changeTitle = (e)=>{
         setTitle(e.target.value)
         dispatch(setTitle({text:e.target.value}))
         console.log(home)
+    }
+    const changeTittleFont = (font)=>{
+        dispatch(setWebsiteTitleFont(font))
     }
 
   return (
@@ -48,12 +52,12 @@ const RightSideContainer = () => {
                 {
                     fontOptions.map( (font , index)=>(
                         <div key={index}  className={`w-full border border-black  flex hover:border-gray-500 text-gray-500 justify-center items-center cursor-pointer  transition duration-100 h-10 ${
-                            titleFont === font ? 'border-2 border-black' : 'border border-transparent'
+                            titleFont === font.font ? 'border-2 border-black' : 'border border-transparent'
                         }  `}
-                        onClick={()=>setTitleFont(font)} 
+                        onClick={()=>changeTittleFont(font.font)} 
                         
                          >
-                            <span>{font}</span>
+                            <span>{font.name}</span>
                         </div>
                     ))
                 }

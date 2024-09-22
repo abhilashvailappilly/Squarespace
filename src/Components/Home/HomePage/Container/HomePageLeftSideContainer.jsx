@@ -5,7 +5,7 @@ import About from "../Ui/About/About";
 import Product from "../Ui/Product/Product";
 import Header from "../Ui/Header/Header";
 
-const HomePageLeftSideContainer = () => {
+const HomePageLeftSideContainer = (props) => {
   const { home, dispatch } = useStoreHook();
   const [textUi, setTextUi] = useState(true);
   const [color,setColors] = useState({  section: "Professional",
@@ -31,7 +31,7 @@ const HomePageLeftSideContainer = () => {
     setTextUi(anyActive);
   }, [home?.sections]);
   return (
-    <div className="w-full h-full flex justify-center items-center relative overflow-hidden">
+    <div className="w-full  h-full flex justify-center items-center relative overflow-hidden">
       {textUi ? (
         <div className="flex w-full h-full justify-center items-center">
           <div className="flex flex-col">
@@ -48,8 +48,8 @@ const HomePageLeftSideContainer = () => {
         </div>
       ) :
       
-      <div className="w-full bg-white  h-full mt-10 flex flex-col justify-center items-center pt-20 ">
-       <div className=" w-3/4 shadow-xl  shadow-slate-600  border-gray-300 h-full overflow-y-auto custom-scrollbar " 
+      <div className={`${props?.padding} w-full  h-full mt-10 flex flex-col justify-center items-center pt-20 `}>
+       <div className={`${props?.width} w-3/4 shadow-xl  shadow-slate-600  border-gray-300 h-full  overflow-y-auto custom-scrollbar` }
        style={{ backgroundColor:bgColor}}>
        <Header/>
         {home.sections["intro"].show && <Intro />}

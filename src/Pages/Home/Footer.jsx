@@ -13,7 +13,7 @@ const Footer = () => {
     }, [pages])
 
     const buildWebsite =()=>{
-
+        navigate('/menu')
     }
     const handleNextClick = ()=> {
          dispatch(nextPage())
@@ -45,22 +45,22 @@ const Footer = () => {
                 <div className="w-full h-2 bg-gray-300 rounded">
                     <div
                         className="h-full bg-black rounded"
-                        style={{ width: `${(value / 4) * 100}%` }}
+                        style={{ width: `${(value / 3) * 100}%` }}
                     />
                 </div>
                 <div className="w-full flex justify-between mt-2 text-xs md:text-sm lg:text-base">
                     <span className='text-black font-medium'>SITE INFO</span>
                     <span className='text-black font-medium'>HOME PAGE</span>
-                    <span className='text-black font-medium'>PAGES</span>
+                    {/* <span className='text-black font-medium'>PAGES</span> */}
                     <span className='text-black font-medium'>COLORS</span>
                     <span className='text-black font-medium'>FONTS</span>
                 </div>
             </div>
 
-         { value < 4 ?   <button
+         { value < 3 ?   <button
                 className={`w-1/2 md:w-24 bg-black py-2 rounded text-center text-white font-extrabold cursor-pointer `}
                 onClick={handleNextClick}
-                disabled={value === 4} 
+                disabled={value === 3} 
             >
                 Next
             </button>  :

@@ -4,6 +4,7 @@ import './App.css'
 import Main from './Pages/Home/Main'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import UserRoute from './Routes/UserRoute'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,8 @@ function App() {
         <Route path='*' element = {<>not found</>} />
       </Routes>
      </BrowserRouter>
+     <Toaster />
+
     </>
   )
 }

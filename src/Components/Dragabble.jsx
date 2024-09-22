@@ -18,7 +18,7 @@ function DraggableResizableComponent() {
 
   const handleDoubleClick = () => {
     if(!save){
-        toast("select edit")
+        toast("select edit")``
         return
     }
     setIsEditing(true); // Enable editing on double-click

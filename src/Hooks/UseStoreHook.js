@@ -4,8 +4,9 @@ export const useStoreHook = () => {
 
     const pages = useSelector((state) => state.pages);
     const home = useSelector((state) => state.home);
+    const menu = useSelector((state) => state.menu);
 
   const dispatch = useDispatch();
 
-  return { pages, home, dispatch };
+  return { pages, home, menu, dispatch };
 };
