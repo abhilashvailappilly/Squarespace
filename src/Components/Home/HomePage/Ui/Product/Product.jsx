@@ -31,11 +31,11 @@ const Product = () => {
     // setFontStyle({ fontFamily: selectedFont });
   }, [home?.selectedFont, home?.font])
   return (
-    <div className="w-full h-2/3   hover:border-4 hover:border-blue-600  ">
+    <div className="w-full h-auto md:h-/3  mb-10 mt-10 hover:border-4 hover:border-blue-600  ">
       <div className="w-full h-1/6  flex justify-center items-end">
-        <span className={`text-xl font-semibold text-gray-500 ${font}`} style={{color:buttonColor}}>Featured Products</span>
+        <span className={`text-xl font-semibold mb-3 text-gray-500 ${font}`} style={{color:buttonColor}}>Featured Products</span>
       </div>
-      <div className="w-full h-4/6 flex gap-2 justify-evenly items-center">
+      <div className="w-full h-4/6 flex flex-col md:flex-row gap-2 justify-evenly items-center">
         <div>
           <div className="w-32 h-3/4 bg-red-500 rounded-full overflow-hidden">
             <img

@@ -14,8 +14,8 @@ const Intro = () => {
     setFont(selectedFont);
   }, [home?.selectedFont, home?.font]);
 
-  const [size, setSize] = useState({ width: 500, height: 100 });
-  const [position, setPosition] = useState({ x: 400, y: 100 });
+  const [size, setSize] = useState({ width: 400, height: 100 });
+  const [position, setPosition] = useState({ x: 200, y: 100 });
   const [isEditing, setEditing] = useState(false); 
   const [save, setSave] = useState(false);
   
@@ -61,6 +61,26 @@ useEffect(()=>{
   const handleBlur = () => {
     setIsEditing(false);
   };
+  
+  // Function to center the Rnd component
+  const updatePositionToCenter = () => {
+    const parentWidth = window.innerWidth; // Get the parent width (could be window or actual parent div)
+    const parentHeight = window.innerHeight; // Get the parent height
+
+    const x = (parentWidth - size.width) / 2;  // Center horizontally
+    const y = (parentHeight - size.height) / 2; // Center vertically
+
+   if(isEditing)setPosition({ x, y });
+  };
+
+  useEffect(() => {
+    updatePositionToCenter(); // Center the Rnd component initially
+    window.addEventListener('resize', updatePositionToCenter); // Update position on window resize
+
+    return () => {
+      window.removeEventListener('resize', updatePositionToCenter);
+    };
+  }, [size]); // Recalculate position when size changes
 
   return (
     <div className="w-full h-2/3 bg-green-300 hover:border-4 hover:border-blue-600 relative">
@@ -83,12 +103,12 @@ useEffect(()=>{
             // maxWidth={500}
             // maxHeight={300}
           >
-            <div className="border-2 w-full  h-full flex justify-center items-center overflow-hidden">
+            <div className={` ${isEditing ? "border-2" : ""} w-full  h-full flex justify-center items-center overflow-hidden`}>
 
             {isEditing ? (
               <input
                 // className="text-center w-full  bg-transparent outline-none"
-                className={`text-white outline-none w-full text-4xl bg-transparent cursor-pointer font-bold ${font}`}
+                className={`text-white outline-none w-full text-xl lg:text-4xl md:text-3xl sm:text-2xl xs:text-xl bg-transparent cursor-pointer font-bold ${font}`}
                 value={menu?.website?.intro?.title}
                 onChange={handleTitleChange}
                 onBlur={handleBlur}
@@ -101,7 +121,7 @@ useEffect(()=>{
               />
             ) : (
              
-                  <span onDoubleClick={handleDoubleClick} className={`text-white text-4xl cursor-pointer font-bold ${font}`}> {menu?.website?.intro?.title}</span>
+                 <span onDoubleClick={handleDoubleClick} className={`text-white text-4xl  md:text-3xl sm:text-2xl xs:text-xl cursor-pointer font-bold ${font}`}> {menu?.website?.intro?.title}</span>
             )}
              </div>
           </Rnd>

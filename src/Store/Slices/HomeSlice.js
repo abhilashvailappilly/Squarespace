@@ -7,7 +7,8 @@ const initialState ={
    selectedFont: {section:"Professional", font:"f1"},
    color:{
     Professional:{
-        p1:{c1:"#347928",c2:"#C0EBA6",c3:"#FCCD2A"} , 
+        p1:{c1:"#ffff",c2:"#000",c3:"#6B7280"} , 
+        // p1:{c1:"#347928",c2:"#C0EBA6",c3:"#FCCD2A"} , 
         p2:{c1:"#001F3F",c2:"#3A6D8C",c3:"#6A9AB0"} , 
         p3:{c1:"#A5B68D",c2:"#003000",c3:"#000"} , 
         p4:{c1:"#795757",c2:"#664343",c3:"#3B3030"} , 

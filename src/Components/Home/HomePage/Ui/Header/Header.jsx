@@ -10,7 +10,7 @@ const Header = () => {
   const [color,setColors] = useState({  section: "Professional",
     palette: "p1",
   });
-  const {home} = useStoreHook()
+  const {home,menu} = useStoreHook()
 
   useEffect(()=>{
     setColors(home?.selectedColor)
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <div className='w-full h-10 p-2  flex justify-between items-center '> 
     <div>
-      <span style={{color:fontColor}} className='text-lg font-bold'>{home?.title?.text}</span>
+      <span style={{color:fontColor}} className={`${menu.website.title.font}text-lg font-bold`}>{home?.title?.text}</span>
     </div>
     <div className="flex gap-2 mr-5 " >
       <span className='text-sm font-bold'  style={{color:fontColor}}>About</span>

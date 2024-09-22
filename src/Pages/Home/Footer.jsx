@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
     const [value, setValue] = useState(0)
-    const {pages,dispatch} = useStoreHook()
+    const {home,pages,dispatch} = useStoreHook()
     const navigate = useNavigate()
     useEffect(() => {
         setValue(pages.currentPageIndex)
@@ -29,6 +29,7 @@ const Footer = () => {
    
 
    }
+   const isAnySectionSelected = Object.values(home.sections).some(section => section.show);
     return (
         <div className='bg-white h-1/4 w-full py-4 flex flex-col md:flex-row justify-evenly items-center space-y-4 md:space-y-0'>
           {
@@ -58,9 +59,12 @@ const Footer = () => {
             </div>
 
          { value < 3 ?   <button
-                className={`w-1/2 md:w-24 bg-black py-2 rounded text-center text-white font-extrabold cursor-pointer `}
+                className={`w-1/2 md:w-24 bg-black py-2 rounded ${ (!isAnySectionSelected && value==1) ? "cursor-not-allowed" :"cursor-pointer"} text-center text-white font-extrabold  `}
                 onClick={handleNextClick}
-                disabled={value === 3} 
+                // disabled={value === 3} 
+                disabled={(!isAnySectionSelected && value==1)
+                    
+                }
             >
                 Next
             </button>  :

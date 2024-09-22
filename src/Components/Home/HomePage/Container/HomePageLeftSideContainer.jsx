@@ -48,7 +48,7 @@ const HomePageLeftSideContainer = (props) => {
         </div>
       ) :
       
-      <div className={`${props?.padding} w-full  h-full mt-10 flex flex-col justify-center items-center pt-20 `}>
+      <div className={`${props?.padding} w-full  h-full mt-1 flex flex-col justify-center items-center pt-20 `}>
        <div className={`${props?.width} w-3/4 shadow-xl  shadow-slate-600  border-gray-300 h-full  overflow-y-auto custom-scrollbar` }
        style={{ backgroundColor:bgColor}}>
        <Header/>

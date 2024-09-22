@@ -85,8 +85,8 @@ useEffect(()=>{
       </div>
       <div className="w-1/2 h-full p-5 flex flex-col justify-center items-center">
           <div className='flex flex-col justify-center items-center'>
-          <h1 className={`text-3xl  lg:text-4xl font-semibold ${font}`} style={{color:buttonColor}}>More about <br/> our brand</h1>
-          <span style={{color:fontColor}} className={`${font}`}>Tell People about who your are, your origin, your process,or your inspirations. Tap into your creativity.You've got this. The way you tell your story online can make all the difference.</span>
+          <h1 className={`text-xl  lg:text-4xl md:text-3xl font-semibold ${font}`} style={{color:buttonColor}}>More about <br/> our brand</h1>
+          <span style={{color:fontColor}} className={`${font} text-xs md:text-lg`}>Tell People about who your are, your origin, your process,or your inspirations. Tap into your creativity.You've got this. The way you tell your story online can make all the difference.</span>
           </div>
           <div>
             <button className={`rounded-lg mt-5 lg:mt-10  w-28 h-10 text-white text-xs ${font}`}  style={{background:buttonColor , color:fontColor}}>LEARN MORE</button>

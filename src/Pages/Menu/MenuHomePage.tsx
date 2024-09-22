@@ -17,11 +17,11 @@ const MenuHomePage = () => {
   useEffect(() => {
     const firstTimer = setTimeout(() => {
       setCurrentView('second'); 
-    }, 1000); //6 8
+    }, 6000); //6 8
 
     const secondTimer = setTimeout(() => {
       setCurrentView('main'); 
-    }, 1000);
+    }, 8000);
 
     return () => {
       clearTimeout(firstTimer);

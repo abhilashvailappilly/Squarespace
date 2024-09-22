@@ -5,7 +5,7 @@ import HomePageLeftSideContainer from '../../Home/HomePage/Container/HomePageLef
 const MenuRightSideContainer = () => {
   return (
     // <div className='pr-4'>
-    <div className='w-full pr-4 h-full no-scrollbar hidden md:block  bg-white overflow-auto'>
+    <div className='w-full pr-4 h-full no-scrollbar block md:block  bg-white overflow-auto'>
     <TopNavbar/>
     
 
