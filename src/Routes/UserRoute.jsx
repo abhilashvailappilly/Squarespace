@@ -10,7 +10,7 @@ const UserRoute = () => {
 
     </Route> */}
     <Route path='/*' element ={<Main/>} />
-    <Route path='/menu' element ={<Menu/>} />
+    <Route path='/menu/*' element ={<Menu/>} />
     {/* <Route path='' element ={} >
         
     </Route> */}

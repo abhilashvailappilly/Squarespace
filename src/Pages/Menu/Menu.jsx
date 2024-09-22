@@ -1,21 +1,20 @@
 import React, { useMemo } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import MenuLayout from '../../Components/Layout/Menu/MenuLayout';
+import BuildingLoaderPage from './BuildingLoaderPage';
 
 const Menu = () => {
   
     const routes = useMemo(() => (
       <Routes>
-        <Route path="/" element={<TitlePage />} />
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/pages" element={<PagesPage />} />
-        <Route path="/colors" element={<ColorsPage />} />
-        <Route path="/fonts" element={<FontPage />} />
+        <Route path="/building" element={<BuildingLoaderPage />} />
+      
       </Routes>
     ), []);
   
     return (
       // <BrowserRouter>
-        <Layout>{routes}</Layout>
+        <MenuLayout>{routes}</MenuLayout>
       // </BrowserRouter>
     );
   
