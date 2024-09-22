@@ -34,4 +34,5 @@ Before you begin, ensure you have the following tools installed:
    git clone https://github.com/abhilashvailappilly/Squarespace.git
    cd squarespace-builder
 2. Install the dependencies:
+    ```bash
     npm install
