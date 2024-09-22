@@ -6,6 +6,7 @@ import IconPaintbrush2 from "../../../Others/Icon/Brush";
 import { setIsEditing } from "../../../../Store/Slices/MenuSlice";
 import { useStoreHook } from "../../../../Hooks/UseStoreHook";
 import toast from "react-hot-toast";
+import { handleResetStore } from "../../../../Methods/Redux";
 
 const TopNavbar = () => {
     const {menu ,  dispatch} = useStoreHook()
@@ -13,6 +14,10 @@ const TopNavbar = () => {
         dispatch(setIsEditing(!menu?.isEditing))
         
     }
+    const handleReset = ()=>{
+      handleResetStore()
+      
+  }
   return (
     <div className="w-full bg-white h-16 mt-5 flex items-center justify-between">
       <div className=" flex items-center w-1/6 h-full">
@@ -39,7 +44,7 @@ const TopNavbar = () => {
         <div className="w-1/4 flex justify-center">
           <IconPaintbrush2 />
         </div>
-        <div className="w-1/4 flex justify-center">
+        <div className="w-1/4 flex justify-center " onClick={handleReset}>
           <IconArrowUpRight />
         </div>
       </div>
